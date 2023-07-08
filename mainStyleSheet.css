@@ -1,0 +1,13 @@
+body {
+    background-color: orange;
+}
+
+h1, h2 {
+    text-align: center;
+}
+.divider{
+    height:15px;
+    width:100%;
+    background-color:red;
+    border-color: red;
+}
