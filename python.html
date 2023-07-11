@@ -9,26 +9,44 @@
 <p>Python is a high level and widely used programming language with extensive libraries.
 It excels both as an easy language for beginnner programmers to learn and an invaluable tool 
 in machine learning, data science, and much more. It is dynamically-typed, is object-oriented,
- and uses pass-by-reference for mutable objects. Python uses indentation to define blocks.</p>
+ and uses pass-by-reference for mutable objects. Python uses indentation to define blocks.
+ The first parameter of non-static methods is the object itself.</p>
  <h2>Example Syntax</h2>
  <pre>
  <code>
-def functionName(parameterList):
-    function body
+from random import randrange
 
-variableName = value
-print("Hello World")
+class RandomList:
+    def __init__(self):
+        self.nums = []
+        for i in range(100):
+            self.nums.append(randrange(100))
+            
+    @staticmethod
+    def printNums(nums):
+        """
+            print numbers in array with random number based on user input
+            nums: 
+            rtype: void
 
-class ClassName:
-    def __init__(arbitrarySelfName, someValue):
-        arbitrarySelfName.memberVariable = someValue
+        """
+        for i in range(len(nums)):
+            print("Would you like to print current number (type yes or no)?")
+            response = input()
+            if (response == "yes"):
+                print(nums[i])
+            elif (response != "no"):
+                print("Assuming you put no")
+            
+            
 
-someList = [1, 2, 3]
-for i in range(len(someList)):
-    if (someList[0]):
-        print(i)
-    elif(someList[i])
-        print(0)
+def main():
+    rand = RandomList()
+    RandomList.printNums(rand.nums)
+    
+
+if __name__ == "__main__":
+    main()
  </code>
  </pre>
 <h2>Useful Functions</h2>
