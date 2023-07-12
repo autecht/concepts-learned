@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python</title>
+<link rel="stylesheet" type="text/css" href="mainStyleSheet.css">
+</head>
+<body>
+<h1>Python</h1>
+<p>Java is</p>
+ <h2>Example Syntax</h2>
+ <pre>
+ <code>
+from random import randrange
+
+class RandomList:
+    def __init__(self):
+        self.nums = []
+        for i in range(100):
+            self.nums.append(randrange(100))
+            
+    @staticmethod
+    def printNums(nums):
+        """
+            print numbers in array with random number based on user input
+            nums: 
+            rtype: void
+
+        """
+        for i in range(len(nums)):
+            print("Would you like to print current number (type yes or no)?")
+            response = input()
+            if (response == "yes"):
+                print(nums[i])
+            elif (response != "no"):
+                print("Assuming you put no")
+            
+            
+
+def main():
+    rand = RandomList()
+    RandomList.printNums(rand.nums)
+    
+
+if __name__ == "__main__":
+    main()
+ </code>
+ </pre>
+<h2>Useful Functions</h2>
+<code><pre>
+
+</pre></code>
+</body>
+</html>
