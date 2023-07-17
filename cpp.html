@@ -16,10 +16,10 @@
 #define RANDOMLIST_H
 #endif
 
-#include <vector>
-#include <iostream>
-#include <cstdlib>
-#include <string>
+#include &ltvector&gt
+#include &ltiostream&gt
+#include &ltcstdlib&gt
+#include &ltstring&gt
 using namespace std;
 
 class RandomList {
@@ -50,7 +50,7 @@ RandomList::~RandomList () {
     delete this->nums;
 }
 
-void RandomList::replaceNums(vector<int> &nums) {
+void RandomList::replaceNums(vector &ltint&gt &nums) {
     for (int i = 0; i < nums.size(); i++){
         cout << "Current number: " << nums[i] << endl;
         cout << "Would you like to replace number (type yes or no)" << endl;
@@ -70,7 +70,7 @@ void RandomList::replaceNums(vector<int> &nums) {
 
 int main() {
     RandomList rand(10);
-    vector<int> &nums = *(rand.nums);
+    vector &ltint&gt &nums = *(rand.nums);
     RandomList::replaceNums(nums);
 
     for (int num:nums) {
