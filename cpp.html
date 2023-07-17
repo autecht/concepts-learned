@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C++</title>
+<link rel="stylesheet" type="text/css" href="mainStyleSheet.css">
+</head>
+<body>
+<h1>C++</h1>
+<p>C++ is</p>
+ <h2>Example Syntax</h2>
+ <div class="code-wrapper" style="margin-bottom:10px">
+ <span class="label">RandomList.h:</span>
+ <pre>
+ <code>
+#ifndef RANDOMLIST_H
+#define RANDOMLIST_H
+#endif
+
+#include &ltvector&gt
+#include &ltiostream&gt
+#include &ltcstdlib&gt
+#include &ltstring&gt
+using namespace std;
+
+class RandomList {
+    public:
+        vector<int>* nums;
+        RandomList(int length);
+        ~RandomList();
+        static void replaceNums(vector<int> &nums);
+};
+ </code>
+ </pre>
+ </div>
+
+ <div class = "code-wrapper">
+ <span class="label">RandomList.cpp:</span>
+ <pre>
+ <code>
+#include "RandomList.h"
+
+RandomList::RandomList (int length) {
+    this->nums = new vector<int>(length);
+    for (int i = 0; i < this->nums->size(); i++){
+        (*(this->nums))[i] = rand()%100;
+    }
+}
+
+RandomList::~RandomList () {
+    delete this->nums;
+}
+
+void RandomList::replaceNums(vector &ltint&gt &nums) {
+    for (int i = 0; i < nums.size(); i++){
+        cout << "Current number: " << nums[i] << endl;
+        cout << "Would you like to replace number (type yes or no)" << endl;
+
+        string response;
+        cin >> response;
+        while (!(response == "yes" || response == "no")){
+            cout << "Please type \"yes\" or \"no\"" << endl;
+            cin >> response;
+        }
+        if (response == "yes"){
+            cout << "Integer to replace with: ";
+            cin >> nums[i];
+        }
+    }
+}
+
+int main() {
+    RandomList rand(10);
+    vector &ltint&gt &nums = *(rand.nums);
+    RandomList::replaceNums(nums);
+
+    for (int num:nums) {
+        cout << num << endl;
+    }
+}
+ </code>
+ </pre>
+ </div>
+<h2>Useful Functions</h2>
+<code><pre>
+
+</pre></code>
+</body>
+</html>

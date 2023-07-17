@@ -11,3 +11,14 @@ h1, h2 {
     background-color:red;
     border-color: red;
 }
+
+.code-wrapper{
+    background-color: rgb(232, 84, 30);
+    border: 3px solid;
+    padding-left:10px;
+    position: relative;
+}
+.label {
+    position:absolute;
+    left:0;
+}

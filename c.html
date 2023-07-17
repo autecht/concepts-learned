@@ -1,17 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>C</title>
+<title>C++</title>
 <link rel="stylesheet" type="text/css" href="mainStyleSheet.css">
 </head>
 <body>
-<h1>C</h1>
-C is a low level programming language. Its low level syntax makes it efficient, and
-many other programming are built off of it. It is statically typed and uses pass by reference.
-There are no out-of-bounds compiler errors, strings are arrays of characters (though string literals
-are immutable), and pointers are used. Structs can be used to immitate objects.
-<h2>Example Syntax</h2>
+<h1>C++</h1>
+<p>C++ is</p>
+ <h2>Example Syntax</h2>
+ <div class="code-wrapper" style="margin-bottom:10px">
+ <span class="label">RandomList.h:</span>
+ <pre>
+ <code>
+#ifndef RANDOMLIST_H
+#define RANDOMLIST_H
+#endif
 
+#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+#include &ltstring.h&gt
+
+typedef struct {
+    int length;
+    int* nums;
+    void (*replaceNums)(int*, int);
+} RandomList;
+
+RandomList* createRandomList(int);
+void replaceNums(int*, int);
+void destroyRandomList(RandomList*);
+ </code>
+ </pre>
+ </div>
+
+ <div class = "code-wrapper">
+ <span class="label">RandomList.cpp:</span>
+ <pre>
+ <code>
+
+#include "RandomList.h"
+
+RandomList* createRandomList(int length){
+    RandomList* randomList = malloc(sizeof(RandomList));
+    randomList->nums = malloc(sizeof(int) * length);
+    randomList->length = length;
+    
+    srand(time(NULL));
+    int* nums = randomList->nums;
+    for (int i = 0; i < length; i++) {
+        int randomNumber = rand() % 100;
+        nums[i] = randomNumber;
+    }
+    
+    randomList->replaceNums = replaceNums;
+}
+
+void destroyRandomList(RandomList* randomList) {
+    free(randomList->nums);
+    free(randomList);
+}
+
+void replaceNums(int* nums, int length) {
+    for (int i = 0; i < length; i++){
+        printf("Current number: %d\n", nums[i]);
+        printf("Would you like to replace number (type yes or no)\n");
+
+        char response[4];
+        scanf("%s", response);
+        while (!((strcmp("yes", response) == 0) || (strcmp("no", response) == 0))){
+            printf("Please type \"yes\" or \"no\"\n");
+            scanf("%s", response);
+        }
+        if (strcmp("yes", response) == 0){
+            printf("Integer to replace with: ");
+            scanf("%d", nums + i);
+        }
+    }
+}
+
+
+
+int main ()
+{
+    RandomList* rand = createRandomList(10);
+    rand->replaceNums(rand->nums, rand->length);
+
+    for (int i = 0; i < rand->length; i++) {
+        printf("%d\n", *((rand->nums) + i));
+    }
+    
+    
+    destroyRandomList(rand);
+    return 0;
+}
+
+ </code>
+ </pre>
+ </div>
 <h2>Useful Functions</h2>
+<code><pre>
+
+</pre></code>
 </body>
 </html>
