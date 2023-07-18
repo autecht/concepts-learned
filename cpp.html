@@ -6,7 +6,13 @@
 </head>
 <body>
 <h1>C++</h1>
-<p>C++ is</p>
+<p>C++ is a programming language built off of C with many useful features. It is designed to streamline creating functional 
+code, not to catch nonfunctional code. It is statically-typed and pass-by-value, with whole copies of objects
+ (rather than just copies of references) being passed into functions. As in C, there are pointers which allow pass-by-reference.
+  In addition, the & operator is overloaded so that variables created with it point to the same memory address 
+  as the variable it is assigned to. Useful features in C++ include vectors, the ability to overload operators and 
+  the use of namespaces. Classes in C++ have a public and private field instead of each variable having private and public access modifiers individually.
+   Dynamic memory allocation is handled with the new and delete keywords.</p>
  <h2>Example Syntax</h2>
  <div class="code-wrapper" style="margin-bottom:10px">
  <span class="label">RandomList.h:</span>
@@ -82,7 +88,14 @@ int main() {
  </div>
 <h2>Useful Functions</h2>
 <code><pre>
-
+    stoi(string s) coverts string to int
+    someVector.front() and someVector.back() return front and back elements of someVector, respectively
+    someVector.size() returns size of vector
+    someVector.capacity() returns capacity allocated for vector (size of backing array)
+    someVector.push_back() adds element to end of someVector
+    someVector.pop_back() removes element from end of someVector
+    someVector.insert(iterator, elem) inserts elem before element pointed to by iterator
+    someVector.erase(iterator) erases element pointed to by iterator
 </pre></code>
 </body>
 </html>

@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>C++</h1>
-<p>C++ is</p>
+<p>C a low level (and, due to being low level, fast) programming language. It is statically-typed, and there 
+are fewer compiler errors. For example, there are no out-of-bounds errors for arrays. Strings in C are treated as 
+arrays of characters, though string literals cannot be modified. When passing an argument in C, 
+a copy of its value is passed into the function, but this is often a reference to an object. You can pass by reference
+in C by passing pointers pointing to variables to a function. The & operator
+ returns a reference to a variable. In C, dynamic memory allocation is handled using specific functions.</p>
  <h2>Example Syntax</h2>
  <div class="code-wrapper" style="margin-bottom:10px">
  <span class="label">RandomList.h:</span>
@@ -99,6 +104,13 @@ int main ()
  </div>
 <h2>Useful Functions</h2>
 <code><pre>
+    strcmp(string1, string2) returns an integer comparing the value of string1 and string2 (0 if equal)
+    strtol(const char *str, char **endptr, int base) returns long int that string is in base, pointing endptr to the end of the string (0)
+        if conversion was successful
+    malloc(size_t size) treturns pointer to dyynamically allocated memory block of size bytes
+    calloc(size_t nmemb, size_t memsize) returns pointer to 0-initialized memory block of size nmemb * memsize
+    realloc(void *ptr, size_t size) reallocates memory block pointed to by ptr to be size size
+    free(void *ptr) deallocates memory block pointed to by ptr
 
 </pre></code>
 </body>
