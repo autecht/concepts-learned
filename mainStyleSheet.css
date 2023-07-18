@@ -1,5 +1,5 @@
 body {
-    background-color: orange;
+    background-color: rgb(246, 210, 144);
 }
 
 h1, h2 {
@@ -8,12 +8,11 @@ h1, h2 {
 .divider{
     height:15px;
     width:100%;
-    background-color:red;
-    border-color: red;
+    background-color:rgb(255, 115, 0);
 }
 
 .code-wrapper{
-    background-color: rgb(232, 84, 30);
+    background-color: rgb(251, 161, 43, 0.902);
     border: 3px solid;
     padding-left:10px;
     position: relative;
